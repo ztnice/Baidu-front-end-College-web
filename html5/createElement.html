@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建新元素</title>
+    <style type="text/css">
+        demo{
+            width: 20%;
+            background-color: #e9faff;
+            display: block;
+            padding: 50px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>创建新元素</h2>
+    <p id="www">哈哈哈，好想去阿里里巴巴</p>
+    <article>在牛皮的梦想也抵不住傻帽似的坚持</article>
+    <demo>我的第一个新元素</demo>
+    <p id="position">以下操作会获取当前的地理位置，这可能需要一段时间</p>
+    <button  onclick="getPosition()">获取当前位置</button>
+
+    <script type="text/javascript">
+        document.createElement("demo");
+        var x = document.getElementById("position");
+        function getPosition() {
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition,showError);
+            }else{
+                x.innerHTML="该浏览器不支持获取地理位置。";
+            }
+        }
+        function showPosition(p) {
+            x.innerHTML="纬度: " + p.coords.latitude +
+                "<br>经度: " + p.coords.longitude;
+        }
+        function showError(error) {
+            switch (error.code){
+                case error.PERMISSION_DENIED:
+                    x.innerHTML="用户拒绝了我们的请求";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML="位置信息不可用";
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML="请求超时";
+                    break;
+                case error.UNKNOWN_ERR:
+                    x.innerHTML="未知错误";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

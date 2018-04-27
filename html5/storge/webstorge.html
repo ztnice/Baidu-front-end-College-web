@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网站列表本地存储</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="webstorge.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="site">
+        <label for="sitename">网站名：</label>
+        <input id="sitename" type="text" name="sitename">
+        <br>
+        <label for="siteurl">网址：</label>
+        <input id="siteurl" type="url" name="siteurl">
+        <br>
+        <input type="button" value="新增记录" class="i" onclick="save()">
+        <hr/>
+        <label for="findsite">查找网址：</label>
+        <input id="findsite" type="text" name="findsite">
+        <input type="button" value="查找" class="i" onclick="find()">
+    </div>
+    <div id="list" class="site">
+    </div>
+    <script type="text/javascript" src="webstorge.js"></script>
+    <script type="text/javascript">
+        loadAll();
+    </script>
+</body>
+</html>

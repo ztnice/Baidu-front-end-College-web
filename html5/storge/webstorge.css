@@ -1,0 +1,23 @@
+.site{
+    border: dashed 2px #ccc;
+    width: 540px;
+    text-align: center;
+    padding: 30px;
+    margin: 0 auto;
+    background-color: snow;
+}
+input,table{
+    width: 400px;
+}
+label{
+    width: 70px;
+}
+input.i{
+    width:400px ;
+    margin-left: 72px;
+}
+p{
+    color: red;
+    font-size: 18px;
+    margin-left: 40px;
+}
